@@ -219,7 +219,14 @@ header {
     background-color: var(--tag-bg);
     padding: 24px;
     border-radius: 16px;
-    border-left: 4px solid var(--accent-color);
+    border-left: 6px solid var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.consultation-guide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .consultation-info {
@@ -229,11 +236,37 @@ header {
 }
 
 .phone-number {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
     color: var(--accent-color);
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: block;
+    margin-bottom: 4px;
+    transition: color 0.2s;
+}
+
+.phone-number:hover {
+    color: var(--accent-hover);
+}
+
+.icon-accent {
+    color: var(--accent-color) !important;
+    font-size: 16px;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.contact-text {
+    color: var(--secondary-text);
 }
 
 /* Footer */
