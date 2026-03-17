@@ -168,6 +168,10 @@ header {
     gap: 32px;
 }
 
+.info-section {
+    position: relative;
+}
+
 .info-section h3 {
     font-size: 16px;
     font-weight: 600;
@@ -200,73 +204,80 @@ header {
     color: var(--secondary-text);
 }
 
-.contact-list {
-    list-style: none;
-}
-
-.contact-list li {
-    font-size: 15px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.contact-list li i { width: 16px; color: var(--secondary-text); }
-
-/* Consultation Guide Enhancement */
-.consultation-guide {
+/* Consultation Highlight Section */
+.consultation-highlight {
     background-color: var(--tag-bg);
-    padding: 24px;
-    border-radius: 16px;
-    border-left: 6px solid var(--accent-color);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.1);
 }
 
-.consultation-guide:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+.section-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.consultation-info {
+.consultation-box {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 }
 
-.phone-number {
-    font-size: 32px;
+.main-phone {
+    font-size: 36px;
     font-weight: 800;
     color: var(--accent-color);
     text-decoration: none;
-    letter-spacing: 0.02em;
-    display: block;
-    margin-bottom: 4px;
-    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.phone-number:hover {
+.main-phone:hover {
     color: var(--accent-hover);
+    transform: scale(1.02);
 }
 
-.icon-accent {
-    color: var(--accent-color) !important;
-    font-size: 16px;
+.main-phone i {
+    font-size: 28px;
+    animation: pulse 2s infinite;
 }
 
-.contact-link {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.2s;
+.sub-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.contact-link:hover {
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.contact-item i {
+    width: 20px;
     color: var(--accent-color);
 }
 
-.contact-text {
+.guide-text {
+    margin-top: 15px;
+    font-size: 12px;
     color: var(--secondary-text);
+    font-style: italic;
 }
 
 /* Footer */
@@ -278,9 +289,16 @@ footer {
     opacity: 0.7;
 }
 
+/* Animations */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Mobile Responsive */
@@ -289,4 +307,5 @@ footer {
     .card-left { padding: 40px 30px; }
     .card-right { padding: 30px; gap: 24px; }
     .profile-img-wrapper { width: 140px; height: 140px; }
+    .main-phone { font-size: 28px; }
 }
