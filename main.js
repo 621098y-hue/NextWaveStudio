@@ -1,43 +1,56 @@
-class SkillCard extends HTMLElement {
-    constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: 'open' });
+// Theme Management
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.documentElement;
+const themeIcon = themeToggle.querySelector('i');
 
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute('class', 'skill-card');
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+}
 
-        const title = document.createElement('h3');
-        title.setAttribute('class', 'skill-title');
-        title.textContent = this.getAttribute('title');
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+});
 
-        const description = document.createElement('p');
-        description.textContent = this.getAttribute('description');
-
-        const style = document.createElement('style');
-        style.textContent = `
-            .skill-card {
-                background: #f9f9f9;
-                padding: 1.5rem;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-                transition: transform 0.3s, box-shadow 0.3s;
-            }
-            .skill-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            }
-            .skill-title {
-                font-size: 1.2rem;
-                color: #005A9C;
-                margin-top: 0;
-            }
-        `;
-
-        shadow.appendChild(style);
-        shadow.appendChild(wrapper);
-        wrapper.appendChild(title);
-        wrapper.appendChild(description);
+function updateIcon(theme) {
+    if (theme === 'dark') {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
     }
 }
 
-customElements.define('skill-card', SkillCard);
+// Simple Greeting Component (from blueprint)
+class SimpleGreeting extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    const wrapper = document.createElement('span');
+    wrapper.setAttribute('class', 'wrapper');
+    const text = document.createElement('p');
+    text.textContent = `Hello, ${this.getAttribute('name') || 'World'}!`;
+    const style = document.createElement('style');
+    style.textContent = `
+      .wrapper {
+        padding: 15px;
+        border: 1px solid var(--accent-color);
+        border-radius: 8px;
+        color: var(--text-color);
+        background: var(--section-bg);
+      }
+    `;
+    shadow.appendChild(style);
+    shadow.appendChild(wrapper);
+    wrapper.appendChild(text);
+  }
+}
+if (!customElements.get('simple-greeting')) {
+    customElements.define('simple-greeting', SimpleGreeting);
+}

@@ -1,4 +1,3 @@
-
 # Blueprint: 점포라인 염건호 소개 페이지
 
 ## Overview
@@ -10,22 +9,23 @@ A personal introduction webpage for 염건호 from 점포라인. The page will b
 ### Visual Design
 *   **Aesthetics:** Modern, clean, and professional design.
 *   **Layout:** Single-page layout with a clear visual hierarchy.
-*   **Color Palette:** A professional palette will be used. (e.g., shades of blue, gray, and white).
-*   **Typography:** Clear and readable fonts. Larger fonts for headings.
-*   **Iconography:** Icons will be used to enhance understanding for sections like "Skills" and "Contact".
-*   **Effects:** Subtle animations and drop shadows on cards to create depth.
-*   **Background:** A subtle noise texture will be applied to the background.
+*   **Color Palette:** A professional palette with support for both Light and Dark modes.
+*   **Typography:** Pretendard font for a modern look.
+*   **Iconography:** Font Awesome icons for theme toggling and contact details.
+*   **Effects:** Smooth transitions between light and dark themes.
 
 ### Implemented Features
-*   **Header:** A prominent header with the name "염건호" and title "점포라인".
-*   **Profile Section:** An area for a profile picture.
-*   **About Me Section:** A brief introduction.
-*   **Skills Section:** A section to list skills using card-style UI.
-*   **Contact Section:** Contact information with icons.
-*   **Responsive Design:** The layout will adapt to different screen sizes.
+*   **Header:** Sticky header with logo, theme toggle, and contact button.
+*   **Theme Switching:** Support for Light Mode (default) and Dark Mode, with persistent user preference via `localStorage`.
+*   **Hero Section:** High-impact introduction with background image and overlay.
+*   **Profile Section:** Professional profile image and introductory text.
+*   **Services Section:** Grid of service cards detailing core expertise.
+*   **Contact Section:** Contact information with a clear call to action.
+*   **Responsive Design:** Optimized for both desktop and mobile devices.
 
 ## Current Plan
 
-1.  **Structure `index.html`:** Create the basic HTML structure with sections for header, profile, about, skills, and contact.
-2.  **Style with `style.css`:** Apply the visual design, including colors, fonts, layout, and effects.
-3.  **Add Interactivity with `main.js`:** Implement a web component for skill cards and add subtle animations.
+1.  **Refactor CSS:** Move internal styles to `style.css` and implement CSS Variables for theming.
+2.  **Add Theme Toggle:** Implement a toggle button in `index.html` using Font Awesome icons.
+3.  **Implement JS Logic:** Handle theme switching and persistence in `main.js`.
+4.  **Deploy:** Push changes to the GitHub repository.
