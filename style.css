@@ -147,8 +147,14 @@ header {
 .profile-img img {
     width: 100%;
     max-width: 400px;
-    border-radius: 15px;
-    box-shadow: 20px 20px 0px var(--accent-color);
+    border-radius: 20px;
+    box-shadow: 15px 15px 30px var(--card-shadow), 0 0 0 5px var(--header-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.profile-img img:hover {
+    transform: scale(1.02);
 }
 
 .profile-text {
