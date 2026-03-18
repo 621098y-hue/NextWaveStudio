@@ -166,6 +166,20 @@
             transform: translateY(1px);
             box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
         }
+
+        /* 댓글 섹션 스타일 */
+        .comments-container {
+            width: 95%;
+            max-width: 500px;
+            margin: 2rem auto;
+            background: var(--container-bg);
+            padding: 1.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px var(--shadow-color);
+            color: var(--text-color);
+        }
     </style>
 </head>
 <body>
@@ -178,6 +192,30 @@
     <button onclick="generateLotto()">새로운 번호 픽!</button>
     <div id="datetime" style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.6; color: var(--text-color);"></div>
 </div>
+
+<!-- Disqus 댓글 섹션 -->
+<div class="comments-container">
+    <div id="disqus_thread"></div>
+</div>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://storedeal.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 <script>
     function updateDateTime() {
