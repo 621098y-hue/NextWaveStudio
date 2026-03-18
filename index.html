@@ -147,14 +147,28 @@
 
 <div class="container">
     <h1>✨ 럭키 로또 추천</h1>
+    <div id="datetime" style="margin-top: -1.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.8; color: var(--accent-color);"></div>
     <div class="number-container" id="ballBox">
-        </div>
+    </div>
     <button onclick="generateLotto()">새로운 번호 픽!</button>
 </div>
 
 <script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = { 
+            year: 'numeric', month: 'long', day: 'numeric', 
+            weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hour12: false,
+            timeZone: 'Asia/Seoul'
+        };
+        document.getElementById('datetime').innerText = now.toLocaleString('ko-KR', options);
+    }
+
     function generateLotto() {
+        updateDateTime();
         const ballBox = document.getElementById('ballBox');
+
         ballBox.innerHTML = ''; // 기존 번호 삭제
 
         let numbers = [];
