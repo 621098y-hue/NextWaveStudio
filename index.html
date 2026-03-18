@@ -3,162 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대한민국 1등 상가 점포 양도양수 컨설팅</title>
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-    <style>
-        /* 기본 설정 */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; word-break: keep-all; }
-        a { text-decoration: none; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        
-        /* 공통 버튼 스타일 */
-        .btn { display: inline-block; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease; border: none; }
-        .btn-primary { background-color: #FF5A00; color: #fff; box-shadow: 0 4px 10px rgba(255, 90, 0, 0.3); }
-        .btn-primary:hover { background-color: #e04e00; transform: translateY(-2px); }
-        .btn-secondary { background-color: #222; color: #fff; }
-        .btn-secondary:hover { background-color: #000; }
+    <title>염건호 팀장 | 성공 창업의 든든한 파트너 - 점포라인</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    
+    <!-- CSS Layers & Styles -->
+    <link rel="stylesheet" href="style.css">
 
-        /* 섹션 공통 */
-        section { padding: 80px 0; }
-        .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: #111; text-align: center; }
-        .section-desc { font-size: 1.1rem; color: #555; text-align: center; margin-bottom: 50px; }
-
-        /* 히어로 섹션 (첫 화면) */
-        .hero { background-color: #111; color: #fff; padding: 120px 0; text-align: center; }
-        .hero h1 { font-size: 3rem; font-weight: 900; line-height: 1.3; margin-bottom: 24px; word-break: keep-all; }
-        .hero h1 span { color: #FF5A00; }
-        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 40px; }
-        .hero .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-        /* 타겟 공감 섹션 (문제 제기) */
-        .pain-points { background-color: #fff; }
-        .pain-list { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
-        .pain-item { background: #f1f3f5; padding: 24px 30px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; color: #333; display: flex; align-items: flex-start; gap: 16px; border-left: 5px solid #FF5A00; }
-        .pain-item::before { content: "💬"; font-size: 1.5rem; }
-
-        /* 핵심 경쟁력 섹션 */
-        .features { background-color: #f8f9fa; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: #fff; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
-        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
-        .feature-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; color: #111; }
-        .feature-card p { font-size: 1rem; color: #666; }
-
-        /* 프로세스 섹션 */
-        .process { background-color: #fff; }
-        .process-steps { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
-        .step { display: flex; align-items: center; gap: 24px; padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .step-num { font-size: 2rem; font-weight: 900; color: #FF5A00; min-width: 60px; text-align: center; }
-        .step-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
-        .step-content p { color: #555; }
-
-        /* CTA 마무리 섹션 */
-        .cta-section { background-color: #FF5A00; color: #fff; text-align: center; padding: 100px 0; }
-        .cta-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
-        .cta-section p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; }
-        .cta-section .btn { background-color: #111; color: #fff; font-size: 1.2rem; padding: 20px 40px; }
-        .cta-section .btn:hover { background-color: #000; transform: translateY(-2px); }
-
-        /* 푸터 */
-        footer { background-color: #111; color: #666; text-align: center; padding: 40px 0; font-size: 0.9rem; }
-
-        /* 모바일 반응형 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero .btn-group { flex-direction: column; padding: 0 20px; }
-            .step { flex-direction: column; text-align: center; gap: 16px; }
-            .section-title { font-size: 1.8rem; }
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
         }
-    </style>
+    }
+    </script>
 </head>
 <body>
+    <div id="noise-overlay"></div>
 
-    <header class="hero">
+    <header id="main-header">
         <div class="container">
-            <h1>가게 내놓으시나요?<br>아니면 <span>진짜 돈 되는 자리</span> 찾으시나요?</h1>
-            <p>답답한 소리 안 합니다. 될 자리만 찾아주고, 제값 받고 확실하게 넘겨드리는<br><strong>스토어 랩</strong>입니다.</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary">내 점포 가치 무료 진단받기</a>
-                <a href="#contact" class="btn btn-secondary">돈 되는 A급 매물 보러 가기</a>
-            </div>
+            <nav>
+                <div class="logo-text">YEOM GEONHO</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">홈</a></li>
+                    <li><a href="#about">프로필</a></li>
+                    <li><a href="#services">서비스</a></li>
+                    <li><a href="#lotto">행운번호</a></li>
+                    <li><a href="#contact">문의하기</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">상담 신청</a>
+            </nav>
         </div>
     </header>
 
-    <section class="pain-points container">
-        <h2 class="section-title">사장님, 지금 이런 고민으로 밤잠 설치고 계시죠?</h2>
-        <p class="section-desc">장사하기도 바쁜데 가게 팔고 사는 것까지 머리 아프게 고민하지 마세요.</p>
-        <div class="pain-list">
-            <div class="pain-item">"내가 쏟은 피땀눈물이 얼만데... 권리금 제대로 받을 수 있을까?"</div>
-            <div class="pain-item">"동네 부동산 열 군데에 내놔도 연락 한 통 없네, 이거 언제 팔리나..."</div>
-            <div class="pain-item">"이 자리 들어가서 장사하면, 진짜 안 망하고 살아남을 수 있을까?"</div>
-        </div>
-    </section>
+    <main>
+        <!-- 3D Hero Section -->
+        <section id="hero">
+            <div id="three-container"></div>
+            <div class="container hero-content">
+                <h1 class="fade-in">성공 창업의<br><span class="accent">든든한 파트너</span></h1>
+                <p class="hero-subtitle fade-in" style="animation-delay: 0.2s;">10년 이상의 빅데이터 분석 노하우로 최고의 점포를 제안합니다.</p>
+                <div class="hero-stats fade-in" style="animation-delay: 0.4s;">
+                    <div class="stat-item">
+                        <span class="stat-value">1,200+</span>
+                        <span class="stat-label">성공 계약</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">98%</span>
+                        <span class="stat-label">고객 만족도</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15+</span>
+                        <span class="stat-label">전문 자격증</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="features">
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" alt="염건호 팀장 프로필" class="profile-img">
+                    </div>
+                    <div class="about-text">
+                        <h2 class="section-title">최고의 전문성으로<br>함께하겠습니다.</h2>
+                        <p class="description">점포라인 서초본사에서 상가 점포 양도양수 컨설팅을 전문으로 하고 있는 팀장 염건호입니다. 단순한 중개를 넘어 데이터 기반의 상권 분석과 권리금 산정을 통해 고객님의 소중한 자산을 지켜드립니다.</p>
+                        <ul class="expertise-list">
+                            <li>창업 컨설팅 1급</li>
+                            <li>프랜차이즈 분석사</li>
+                            <li>상권분석 전문가</li>
+                            <li>권리금 가치평가사</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title centered">전문 서비스 안내</h2>
+                <div class="services-grid">
+                    <service-card 
+                        icon="store" 
+                        title="점포 컨설팅" 
+                        description="업종별 최적의 입지 분석과 안정적인 수익 구조를 보장하는 최적의 점포를 매칭해드립니다.">
+                    </service-card>
+                    <service-card 
+                        icon="calculator" 
+                        title="권리금 산정" 
+                        description="정확한 매출 분석과 시설 가치 평가를 통해 합리적이고 투명한 권리금을 산정합니다.">
+                    </service-card>
+                    <service-card 
+                        icon="map" 
+                        title="상권 분석" 
+                        description="빅데이터를 활용하여 유동인구, 경쟁업종, 배후수요 등 정밀한 상권 정보를 제공합니다.">
+                    </service-card>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lotto Section (New Event Feature) -->
+        <section id="lotto" style="background: oklch(25% 0.05 260 / 0.03);">
+            <div class="container">
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 class="section-title">성공 창업을 위한<br><span class="accent">오늘의 행운 번호</span></h2>
+                    <p class="description">성공적인 창업은 운도 실력입니다. 염건호 팀장이 제공하는 오늘의 행운 번호로 기분 좋은 시작을 해보세요!</p>
+                    
+                    <div id="lotto-ball-container" style="display: flex; gap: 12px; justify-content: center; margin: 3rem 0; min-height: 52px;">
+                        <!-- Balls will be injected here -->
+                    </div>
+                    
+                    <button id="lotto-btn" class="btn btn-primary" style="padding: 1rem 3rem;">행운 번호 받기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-info">
+                        <h2 class="section-title">궁금한 점이<br>있으신가요?</h2>
+                        <p class="description">상담 신청을 남겨주시면 24시간 이내에 전문적인 답변을 드리겠습니다.</p>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="label">연락처</span>
+                                <span class="value">010-XXXX-XXXX</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">이메일</span>
+                                <span class="value">yeom@storlab.pro</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">위치</span>
+                                <span class="value">서울시 서초구 서초대로 점포라인 본사</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="성함" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="문의 내용" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">상담 신청하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
         <div class="container">
-            <h2 class="section-title">뜬구름 잡는 소리 안 합니다.<br>팩트와 데이터로만 승부합니다.</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>뼈 때리는 팩트 폭격기</h3>
-                    <p>안 될 자리는 안 된다고 단칼에 말씀드립니다. 수수료 몇 푼 더 벌겠다고 사장님들 상대로 괜한 희망 고문하면서 시간 낭비하게 만들지 않습니다.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>감이 아닌 데이터 컨설팅</h3>
-                    <p>감으로 때려 맞추는 중개? 제 사전엔 없습니다. 상권 분석, 시간대별 유동 인구, 주변 경쟁점 예상 매출까지 싹 다 까놓고 객관적으로 보여드립니다.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>압도적인 권리금 매수/매도 풀(Pool)</h3>
-                    <p>대한민국 1등 점포거래소의 방대한 데이터베이스에 제 발로 뛰는 영업 노하우를 얹었습니다. 살 사람과 팔 사람을 가장 빠르고 정확하게 매칭합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="process container">
-        <h2 class="section-title">질질 끄는 거 딱 질색입니다.<br>확실하고 깔끔하게 끝냅니다.</h2>
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-num">01</div>
-                <div class="step-content">
-                    <h3>냉정한 현실 점검</h3>
-                    <p>현재 매물 상태나 찾으시는 조건부터 필터링 없이 투명하게 분석합니다.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <div class="step-content">
-                    <h3>맞춤형 타겟 전략</h3>
-                    <p>권리금 방어 전략이든, 특급 매물 선점 전략이든 사장님 상황에 딱 맞는 판을 짭니다.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <div class="step-content">
-                    <h3>속전속결 권리계약 진행</h3>
-                    <p>조건에 맞는 확실한 매수/매도자를 찾아 뒷말 안 나오게 깔끔하게 도장 찍습니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <h2>장사도 타이밍, 점포 거래도 타이밍입니다.</h2>
-            <p>어설픈 곳에 맡겨서 권리금 깎이고 속 끓이지 마세요.<br>지금 바로 연락 주시면, 사장님 가게 견적부터 시원하게 싹 뽑아드리겠습니다.</p>
-            <a href="tel:01081641345" class="btn">바로 전화하기</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>권리금 점포 양도양수 전문 스토어랩</p>
-            <p>Copyright © 2026. All rights reserved.</p>
+            <p>&copy; 2024 염건호 팀장 - 점포라인. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="main.js" type="module"></script>
 </body>
 </html>

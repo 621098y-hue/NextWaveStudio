@@ -213,11 +213,49 @@ function initForm() {
     });
 }
 
+// --- Lotto Generator Logic ---
+function initLotto() {
+    const lottoBtn = document.getElementById('lotto-btn');
+    const ballContainer = document.getElementById('lotto-ball-container');
+    if (!lottoBtn || !ballContainer) return;
+
+    function generateLotto() {
+        ballContainer.innerHTML = ''; // Clear previous balls
+        let numbers = [];
+        while(numbers.length < 6) {
+            let num = Math.floor(Math.random() * 45) + 1;
+            if(!numbers.includes(num)) {
+                numbers.push(num);
+            }
+        }
+        numbers.sort((a, b) => a - b);
+
+        numbers.forEach((num, index) => {
+            const ball = document.createElement('div');
+            ball.className = 'number-ball';
+            ball.innerText = num;
+            ball.style.animationDelay = `${index * 0.1}s`;
+
+            if (num <= 10) ball.classList.add('ball-1');
+            else if (num <= 20) ball.classList.add('ball-11');
+            else if (num <= 30) ball.classList.add('ball-21');
+            else if (num <= 40) ball.classList.add('ball-31');
+            else ball.classList.add('ball-41');
+
+            ballContainer.appendChild(ball);
+        });
+    }
+
+    lottoBtn.addEventListener('click', generateLotto);
+    generateLotto(); // Initial generation
+}
+
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     new HeroBackground();
     initScrollAnimations();
     initForm();
+    initLotto();
 
     // Smooth header appearance on scroll
     const header = document.getElementById('main-header');

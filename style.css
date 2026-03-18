@@ -367,7 +367,40 @@
     }
 }
 
-/* Service Card Component (Shadow DOM styles are separate, but we define the tag here for container queries) */
-service-card {
-    container-type: inline-size;
+    /* Service Card Component (Shadow DOM styles are separate, but we define the tag here for container queries) */
+    service-card {
+        container-type: inline-size;
+    }
+
+    /* Lotto Ball Styles */
+    .number-ball {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 10px oklch(0% 0 0 / 0.2);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        transform: scale(0.5);
+        animation: appearBall 0.5s forwards ease-out;
+    }
+
+    .number-ball:hover { transform: scale(1.15) rotate(5deg); }
+
+    @keyframes appearBall {
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Lotto Ball Colors (Modern OKLCH) */
+    .ball-1 { background: linear-gradient(135deg, oklch(85% 0.15 85), oklch(75% 0.15 80)); } /* Gold/Yellow */
+    .ball-11 { background: linear-gradient(135deg, oklch(75% 0.1 240), oklch(65% 0.1 240)); } /* Blue */
+    .ball-21 { background: linear-gradient(135deg, oklch(70% 0.15 20), oklch(60% 0.15 20)); } /* Red */
+    .ball-31 { background: linear-gradient(135deg, oklch(75% 0.05 260), oklch(65% 0.05 260)); } /* Gray/Navy */
+    .ball-41 { background: linear-gradient(135deg, oklch(75% 0.15 150), oklch(65% 0.15 150)); } /* Green */
 }
